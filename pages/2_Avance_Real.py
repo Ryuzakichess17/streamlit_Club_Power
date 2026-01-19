@@ -14,7 +14,7 @@ st.set_page_config(
 # =========================
 # CARGA DE DATA
 # =========================
-@st.cache_data(ttl=3600)  # se refresca cada hora
+@st.cache_data(ttl=60)  # se refresca cada hora
 def cargar_data():
     ruta_base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     ruta = os.path.join(ruta_base, "avance_real.xlsx")
@@ -214,3 +214,4 @@ st.data_editor(
     hide_index=True,
     disabled=True
 )
+
